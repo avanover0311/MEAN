@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1> Total Gold: {{ total }}! </h1>
+    <button (click)="reset()">
+        Reset Gold!</button>
+    <hr>
+</div>
+
+<div class="big">
+    <div class="little">
+        <h2>Farm</h2>
+        <p>Earns 2-5 Gold!</p>
+        <button (click)="farmUp()">
+            Get some Gold!</button>
+    </div>
+
+    <div class="little">
+        <h2>Cave</h2>
+        <p>Earns 5-10 Gold!</p>
+        <button (click)="caveUp()">
+            Get some Gold!</button>
+    </div>
+
+    <div class="little">
+        <h2>House</h2>
+        <p>Earns 7-15 Gold!</p>
+        <button (click)="houseUp()">
+            Get some Gold!</button>
+    </div>
+
+    <div class="little">
+        <h2>Casino</h2>
+        <p>Earn or lose 100 Gold!</p>
+        <button (click)="casinoUp()">
+            Get some Gold!</button>
+    </div>
+</div><hr>
+
+<div class="big">
+    <ul>
+        <h2>Adventure Log!</h2>
+        <li *ngFor='let task_for_li of tasks'>
+            {{ task_for_li }}
+        </li>
+        <hr>
+    </ul>
+</div>

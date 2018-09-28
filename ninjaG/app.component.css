@@ -1,0 +1,10 @@
+div.big {
+    margin: 10px auto;
+    border-width: 2px black;
+    text-align: center;
+}
+div.little {
+    width: 20%;
+    height: 150px;
+    display: inline-block;
+}

@@ -1,0 +1,140 @@
+
+
+*************************************************
+Zip files without Node Modules
+*************************************************
+zip -r rest.zip Restful_Tasks -x *node_modules/\*
+
+
+
+1. Run mongoose (mongod)
+2. ng build --watch from public folder
+3. run server (nodemon server.js)
+4. run mongo
+
+
+Creating a new app using express
+
+1. Create a folder APP_NAME 
+2. Give it a file called "server.js" ---> suggested file at the bottom
+3. run npm install express while in the APP_NAME directory.
+
+Now let’s install ejs and express, from command-line in the same folder:
+npm install express --save
+npm install ejs --save
+npm install body-parser --save
+
+
+
+make a package.json file:
+yourcommandline> npm init -y
+yourcommandline> npm install express --save
+yourcommandline> npm install ejs --save
+yourcommandline> npm install body-parser --save
+yourcommandline> npm install mongoose --save
+
+
+create folders:
+	config
+		mongoose.js
+		routes.js
+	controllers
+		TYPE_controller.js
+	models
+		each db table
+	client
+		html
+		css
+
+Create new Angular App:
+ng new APP_NAME
+
+
+
+Create a new Service:
+Go to directory with Angular App first then run
+ng g s SERVICE_NAME
+
+
+
+To kill Mongo Server
+ps -ax | grep mongo
+
+then
+sudo kill 'the returned number'
+
+
+Creating Services
+
+1.  Create
+ng g s http
+
+2.  Register
+app.module.ts
+import - at the top
+[providers] - add to this list inside the []
+
+3.  HttpClient
+app.module.ts
+Import
+[imports]
+
+4.  Dependency Injection
+import 
+attribute 
+in constructor
+
+
+ Create a service
+ Register the service
+ Import HttpClientModule into the project
+ Inject HttpClient into the service
+ Inject the service into the root component
+ Write functions in the service that make AJAX requests to all get routes in the Restful Task API
+ Invoke each function you wrote in the service and have the service console.log the data it receives
+
+Generate new componenets:
+ng generate component NAME_OF_COMPONENT
+
+************************
+server.js:
+************************
+
+var express = require('express');
+var path = require('path');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose')
+
+var app = express();
+
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'sample_angular', 'dist', 'angular_app')));
+app.use(express.static( __dirname + '/public/dist/public' ));
+
+require('./config/mongoose.js')
+require('./config/routes.js')(app);
+
+app.listen(8000, function(){
+	console.log('listening on port 8000');
+})
+
+
+
+************************
+mongoose.js
+************************
+var path 	 = require('path'),
+	fs	 	 = require('fs'),
+	mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/Animal')
+
+var models_path = path.join(__dirname, './../models');
+
+fs.readdirSync(models_path).forEach(function(file) {
+	if(file.indexOf('.js') >= 0) {
+		require(models_path + '/' + file)
+	}
+})
+
+

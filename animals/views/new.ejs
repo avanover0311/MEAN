@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  	<head>
+	    <meta charset="utf-8">
+	    <title>Add a Sloth</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<h3>Make a New Sloth</h3>
+			</div>
+			<div class="row">
+				<form action="/sloths" method="post">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" name="name" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<label for="quote">Favorite Food</label>
+						<input type="text" name="favorite_food"  placeholder="Favorite Food">
+					</div>
+					<div class="form-group">
+						<label for="age">Age</label>
+						<input type="number" name="age" placeholder="0">
+					</div>
+					<div class="row"> 
+						<button type="submit" class="btn btn-primary">Add My Sloth</button>
+					</div>
+	 			</form>
+			</div>
+		</div>
+	</body>
+</html>

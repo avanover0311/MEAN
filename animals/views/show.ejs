@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  	<head>
+	    <meta charset="utf-8">
+	    <title>Show a Sloth</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<h3>Here is your Sloth</h3>
+			</div>
+			<div class="row">
+				<ul>
+	    				<li><h4>Name: <%= sloth.name %></h4></li>
+	    				<li>Favorite Food: <%= sloth.favorite_food %></li>
+	    				<li>Age: <%= sloth.age %></li>
+  				</ul>
+			</div>
+			<div class="row">
+				<a href="/">Back to All Sloths</a>
+			</div>
+			<div class="row">
+				<a href="/sloths/edit/<%=sloth.id%>">Edit This Sloth</a>
+			</div>
+			<div class="row">
+				<a href="/sloths/destroy/<%=sloth.id%>" data-method="post">Delete This Sloth</a>
+			</div>
+		</div>
+
+	</body>
+</html>

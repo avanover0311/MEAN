@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Rate my Cakes!
+  </h1>
+</div>
+
+<h2>Submit your cake here: </h2>
+<div class="row">
+    <form (submit)="onSubmit()">
+      <p>{{ newCakes | json }}</p>
+      <input type="text" name="cake.name" placeholder="Baker Name" [(ngModel)]= 'cake.name' />
+      <input type="text" name="cake.cake" placeholder="Image URL:" [(ngModel)]= 'cake.cake' />
+      <input type="submit" value="List Cake" />
+    </form>
+</div>
+
+<div class="row">
+    <h3>Cake List:</h3>
+  <ul>
+    <li *ngFor="let x of cakes">
+      <h2>{{ x.name }}</h2>
+      <p>{{ x.cake }}</p>
+      <!-- <button (click) = "displayEdit(task_for_li._id)">Edit Task</button>
+      <button (click) = "deleteTask(task_for_li._id)">Delete Task</button>
+      <button (click)="taskToShow(task_for_li._id)">Show</button> -->
+    </li>
+  </ul>
+</div> 

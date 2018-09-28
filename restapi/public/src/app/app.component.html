@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+  <div class="row">
+    <form (submit)="onSubmit()">
+      <p>{{ newTasks | json }}</p>
+      <input type="text" name="task.task" placeholder="New Task" [(ngModel)]= 'task.task' />
+      <input type="text" name="task.description" placeholder="Description" [(ngModel)]= 'task.description' />
+      <input type="submit" value="Create Task" />
+    </form>
+  </div>
+
+  <div class="row">
+    <h3>Task List:</h3>
+  <ul>
+    <li *ngFor="let task_for_li of tasks">
+      <h2>{{ task_for_li.task }}</h2>
+      <p>{{ task_for_li.description }}</p>
+      <button (click) = "displayEdit(task_for_li._id)">Edit Task</button>
+      <button (click) = "deleteTask(task_for_li._id)">Delete Task</button>
+      <button (click)="taskToShow(task_for_li._id)">Show</button>
+    </li>
+  </ul>
+
+  <form *ngIf="task_to_edit" (submit)="onSubmitEdit()">
+        <input type="text" (value)="task_to_edit.task" name="task_to_edit.task" [(ngModel)]='task_to_edit.task' />
+        <input type="text" name="task_to_edit.description" placeholder="task_to_edit.description" [(ngModel)]='task_to_edit.description' />
+        <input type="submit" value="Update Task" />
+  </form>
+
+  <app-task *ngIf="selectedTask" [taskToShow]="selectedTask"></app-task>
+
+  </div> 
+</div>

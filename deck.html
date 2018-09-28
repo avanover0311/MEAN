@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Deck of Cards</title>
+</head>
+<body>
+	<script>
+		class Card {
+			constructor(suit, string, number) {
+				this.suit = suit;
+				this.string = string;
+				this.number = number;
+			}
+
+			showCard() {
+				console.log("CARD INFO: Suit: " + this.suit + "String: " + this.string + "Number: " + this.number + ".");
+			}
+		}
+
+		class Deck {
+			constructor() {
+				this.deck = [];
+
+				const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
+				const strings = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+
+				for (let suit in suits) {
+					for (let string in strings) {
+						this.deck.push(`${strings[string]} of ${suits[suit]}`);
+					}
+				}
+			}
+
+			shuffle() {
+				const deck = this.deck;
+				let m = deck.length, i;
+
+				while (m) {
+					i = Math.floor(Math.random() * m--);
+					[deck[m], deck[i]] = [deck[i], deck[m]];
+				}
+				return this.deck;
+			}
+
+			deal() {
+				var card = this.deck.pop();
+				console.log(this.deck);
+				return card;
+			}
+
+			reset() {
+				return new Deck; 
+			}
+
+			hand() {
+				const hand = this.deck.slice(0, 5);
+				return hand; 
+			}
+		}
+
+		class Player extends Deck {
+			constructor(name) {
+				super();
+				this.name = name;
+			}
+
+			takeCard() {
+				let card = this.deal();
+				return card; 
+			}
+
+			// discard() {
+			// 	let discarded = this.
+			// 	return hand.pop();
+			// }
+		}
+
+		const deck1 = new Deck();
+		console.log(deck1);
+		const player1 = new Player("Jim Pronto");
+		console.log("PLAYER NAME: " + player1.name);
+		console.log("DISPLAY DECK: " + deck1.deck);
+		console.log("DECK SHUFFLED: " + deck1.shuffle());
+		console.log(deck1.reset());
+		console.log("PLAYER DEALT HAND: " + deck1.hand());
+		console.log("PLAYER TAKES CARD: " + player1.takeCard());
+		// console.log("PLAYER DISCARDS CARD: " + player1.discard());
+
+	</script>
+	
+</body>
+</html>

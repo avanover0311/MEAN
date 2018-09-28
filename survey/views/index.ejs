@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+	<body>
+		<form action='/show' method="post">
+		<h1>Dojo Survey</h1>
+		<div class="container">
+			<div class="form-group">
+			    <label for="exampleFormControlInput1">Name</label>
+			    <input type="text" class="form-control" id="name" placeholder="name" name="name">
+			</div>
+		  	<div class="form-group">
+		    	<label for="exampleFormControlSelect1">Dojo Location</label>
+		    	<select class="form-control" id="location" name="location">
+				    <option>Seattle</option>
+				    <option>Mountain View</option>
+				    <option>New York</option>
+				    <option>Tulsa</option>
+				    <option>Dallas</option>
+		    	</select>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="exampleFormControlSelect2">Favorite Langauge</label>
+			    <select multiple class="form-control" id="language" name="language">
+				    <option>Python</option>
+				    <option>Javascript</option>
+				    <option>Ruby</option>
+				    <option>Mean</option>
+				    <option>HTML/CSS</option>
+		    	</select>
+		  	</div>
+			<div class="form-group">
+			    <label for="exampleFormControlTextarea1">Comments</label>
+		    		<textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+		  	</div>
+		  		<button type="submit">Submit</button>
+		</div>
+		</form>
+	</body>
+</html>

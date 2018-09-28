@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  	<head>
+	    <meta charset="utf-8">
+	    <title>Sloths</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<h1>Sloths</h1>
+			</div>
+				  	<% for(sloth of all_sloths) { %>
+			<div class="row">
+				<ul>
+	    				<li><a href="/sloths/<%= sloth._id %>"><h4>Name: <%= sloth.name %></h4></a></li>
+	    				<li>Favorite Food: <%= sloth.favorite_food %></li>
+	    				<li>Age: <%= sloth.age %></li>
+  				</ul>
+			</div>
+	  				<% } %>
+			<div class="row">
+				<a href="/sloths/new">Add a New Sloth</a>
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container" style="text-align:center">
+  <h1>
+    Welcome to Squishy Tomatoes!
+  </h1>
+ 
+
+<h2>Movie List</h2>
+<h3><button [routerLink]="['/create']" type="button" class="btn btn-primary">Add a new Movie</button></h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Movie</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td *ngFor="let movies_for_li of movie"></td>
+      <td> {{ movies_for_li.title }} </td>
+      <td><button [routerLink]="['/Review create']" type="button" class="btn btn-primary">Write Reviews</button> || <button [routerLink]="['/Review show']" type="button" class="btn btn-primary">Read Reviews</button></td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
+</div>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotes</title>
+</head>
+<body>
+	<div class="container">
+		  	<% for(i in quotes) { %>
+                <li class="quote"><%= quotes[i].quote %></li>
+                <li class="quote"><%= quotes[i].name %></li>
+             <% } %>
+	</div>
+</body>
+</html>
